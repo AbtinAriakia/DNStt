@@ -8,8 +8,8 @@ User=root
 ExecStart=/usr/local/bin/dnstt-server \
     -udp :5300 \
     -privkey-file /etc/dnstt/server.key \
-     a.hjp.lol \
-     127.0.0.1:25267
+     t.example.com \
+     127.0.0.1:22
 Restart=on-failure
 RestartSec=5
 NoNewPrivileges=true
