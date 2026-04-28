@@ -1,0 +1,19 @@
+[Unit]
+Description=DNS Turbo Tunnel
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/bin/dnstt-server \
+    -udp :5300 \
+    -privkey-file /etc/dnstt/server.key \
+    -mtu 1232 \
+     t.yourdomain.com \
+     127.0.0.1:22
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
